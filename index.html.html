@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahika Nambiar | Resume</title>
+
+  <!-- Google Fonts: Fraunces for headings, DM Sans for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Link to our CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav id="navbar">
+    <a href="#home" class="logo">MN</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO / INTRO ===== -->
+  <header id="home" class="hero">
+    <div class="hero-text">
+      <p class="greeting">Hello, I'm</p>
+      <h1>Mahika Nambiar</h1>
+      <p class="tagline">Commerce student at NMIMS and BBA (Digital Business &amp; Entrepreneurship) student at IIM Bangalore. I love turning creative ideas into real projects, from business research to street plays.</p>
+      <a href="#contact" class="button">Get in touch</a>
+    </div>
+    <figure class="hero-photo">
+      <img src="data:image/jpeg;base64,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" alt="Photo of Mahika Nambiar">
+    </figure>
+  </header>
+
+  <main>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h2>About me</h2>
+      <div class="about-grid">
+        <div>
+        <p>I am a first-year student pursuing a B.Com (Hons.) at Anil Surendra Modi School of Commerce, NMIMS, alongside the BBA in Digital Business and Entrepreneurship at IIM Bangalore. I enjoy research, marketing and leading teams, and I bring a creative side from years of dance, music, drawing and theatre.</p>
+        <p class="goal"><strong>Career goal:</strong> to build a career in marketing and entrepreneurship, where I can combine research, creativity and leadership to grow brands and eventually start a business of my own.</p>
+        </div>
+        <div class="quick-facts">
+          <p><strong>Based in</strong> Mumbai</p>
+          <p><strong>Languages</strong> English, Hindi, Malayalam</p>
+          <p><strong>Interests</strong> Painting, dance, singing, video editing, fashion design</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION (table) ===== -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="table-wrap">
+        <table class="edu-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Institute</th>
+              <th>Years</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>B.Com (Hons.)</td>
+              <td>Anil Surendra Modi School of Commerce, NMIMS, Mumbai</td>
+              <td>2026 - 2030</td>
+              <td>Ongoing</td>
+            </tr>
+            <tr>
+              <td>BBA, Digital Business and Entrepreneurship</td>
+              <td>Indian Institute of Management Bangalore</td>
+              <td>2026 - 2029</td>
+              <td>Ongoing</td>
+            </tr>
+            <tr>
+              <td>Class XII (CBSE)</td>
+              <td>Rajhans Vidyalaya, Mumbai</td>
+              <td>2025 - 2026</td>
+              <td>82.6%</td>
+            </tr>
+            <tr>
+              <td>Class X (CBSE)</td>
+              <td>R.N. Podar School, Mumbai</td>
+              <td>2023 - 2024</td>
+              <td>89.8%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS (cards) ===== -->
+    <section id="projects" class="section">
+      <h2>Academic projects</h2>
+      <div class="card-grid">
+        <article class="card featured">
+          <h3>Personal resume website</h3>
+          <p>Designed and built this website to present my resume online, with a navigation bar, project cards and an education table.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> HTML, CSS, Google Fonts, GitHub Pages</p>
+        </article>
+        <article class="card">
+          <h3>E-dustbin: smart waste management</h3>
+          <p>Designed a smart waste solution combining AI-based waste segregation, rewards for users, and eco-friendly compost generation.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> Product design, AI concept, sustainability research</p>
+        </article>
+        <article class="card">
+          <h3>Entrepreneurial food stall</h3>
+          <p>Led a team running a stall at a school entrepreneurship fair, handling branding, marketing, pricing and sales, and prepared the income statement.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> Branding, pricing, income statement</p>
+        </article>
+        <article class="card">
+          <h3>Consumer insight study: Curlvana</h3>
+          <p>Designed a consumer survey, collected 20 responses, and analysed buying behaviour and market trends to suggest actions.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> Survey design, consumer analysis</p>
+        </article>
+        <article class="card">
+          <h3>Food supply chain in India</h3>
+          <p>Studied production, storage, transport, distribution and policy across India’s food supply chain, and recommended ways to make it more efficient.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> Secondary research, policy analysis</p>
+        </article>
+        <article class="card">
+          <h3>Fayol’s principles in practice</h3>
+          <p>Compared how Amazon, SUGAR Cosmetics and Zomato apply Henri Fayol’s 14 principles of management in leadership, structure and decision-making.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> Case study analysis</p>
+        </article>
+        <article class="card">
+          <h3>Parental pressure and stream choice</h3>
+          <p>Researched how family and cultural expectations push students towards Science over Arts, and how this affects careers and well-being.</p>
+          <p class="tools"><strong>Tools &amp; methods:</strong> Primary research, data analysis</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== LEADERSHIP ===== -->
+    <section id="leadership" class="section">
+      <h2>Leadership and responsibility</h2>
+      <ul class="pretty-list">
+        <li>Led and wrote scripts for several street plays (nukkad natak) on child labour and human rights</li>
+        <li>Class Monitor in primary and secondary school</li>
+        <li>Led and managed school events as a volunteer</li>
+        <li>Led school group projects, coordinating with teachers and teammates</li>
+        <li>Volunteered for the school food distribution drive</li>
+        <li>Member of the school club</li>
+      </ul>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
+    <section id="achievements" class="section">
+      <h2>Achievements and activities</h2>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Awards</h3>
+          <ul class="pretty-list">
+            <li>2nd and 3rd rank, International English Olympiad (SOF), two years in a row</li>
+            <li>4th rank, International Mathematics Olympiad (SOF)</li>
+            <li>1st prize, folk dance competition, two years in a row</li>
+            <li>Several prizes in chess and in English and Hindi elocution</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Arts and sports</h3>
+          <ul class="pretty-list">
+            <li>Trained in Bharatanatyam for 5 years</li>
+            <li>Cleared Level 2 of the Carnatic music examination</li>
+            <li>Lawn tennis and basketball at academy level</li>
+            <li>Workshops in drama, Vedic maths, Warli and alcohol-ink painting, and fashion design (SEFT)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li>Presentation</li>
+        <li>Team leadership</li>
+        <li>Event planning</li>
+        <li>Problem solving</li>
+        <li>Market research</li>
+        <li>Advertising</li>
+        <li>Logo design</li>
+        <li>Script writing</li>
+        <li>Video editing</li>
+        <li>HTML &amp; CSS</li>
+      </ul>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>I’d be happy to connect about projects, internships or events.</p>
+      <p class="email-line">Email: <a href="mailto:mahikan538@gmail.com">mahikan538@gmail.com</a></p>
+      <div class="contact-links">
+        <a href="mailto:mahikan538@gmail.com" class="button">Email me</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mahika Nambiar</p>
+  </footer>
+
+</body>
+</html>

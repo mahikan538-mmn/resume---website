@@ -1,0 +1,423 @@
+/* =========================================================
+   1. COLOR PALETTE (CSS variables)
+   We define the colors once here and reuse them everywhere.
+   This keeps the color scheme consistent across the site.
+   ========================================================= */
+:root {
+  --deep-teal: #14463F;   /* main color: headings, nav bar */
+  --marigold:  #E3A72F;   /* accent color: buttons, highlights */
+  --mint-bg:   #F3F7F5;   /* page background */
+  --white:     #FFFFFF;   /* cards */
+  --ink:       #26302D;   /* body text */
+  --soft-gray: #5E6B67;   /* secondary text */
+}
+
+/* =========================================================
+   2. ELEMENT SELECTORS (style HTML tags directly)
+   ========================================================= */
+* {
+  box-sizing: border-box;   /* padding is included in width, easier layouts */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;  /* nav links scroll smoothly to sections */
+  scroll-padding-top: 80px; /* so the sticky nav doesn't cover headings */
+}
+
+body {
+  font-family: "DM Sans", Arial, sans-serif;  /* clean, readable body font */
+  background-color: var(--mint-bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;    /* elegant heading font */
+  color: var(--deep-teal);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   3. NAVIGATION BAR (ID selector + Flexbox + sticky position)
+   ========================================================= */
+#navbar {
+  position: sticky;          /* stays at the top while scrolling */
+  top: 0;
+  z-index: 10;               /* sits above the other content */
+  display: flex;             /* puts logo and links in one row */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  background-color: var(--deep-teal);
+}
+
+#navbar .logo {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--marigold);
+}
+
+.nav-links {
+  display: flex;             /* links side by side */
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {         /* pseudo-class: changes on mouse hover */
+  border-bottom-color: var(--marigold);
+}
+
+/* =========================================================
+   4. HERO SECTION (class selector)
+   ========================================================= */
+.hero {
+  min-height: 85vh;          /* fills most of the screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+  max-width: 1100px;         /* lines up with the sections below */
+  margin: 0 auto;
+}
+
+.hero .greeting {
+  font-size: 1.25rem;
+  color: var(--soft-gray);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 9vw, 6.5rem); /* big name, shrinks on phones */
+  line-height: 1.05;
+  margin: 0.5rem 0 1.5rem;
+  border-left: 10px solid var(--marigold);  /* signature accent */
+  padding-left: 1.5rem;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  max-width: 600px;          /* keeps lines short and easy to read */
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   5. BUTTONS (reusable classes)
+   ========================================================= */
+.button {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.8rem 1.8rem;
+  background-color: var(--marigold);
+  color: var(--deep-teal);
+  font-weight: 700;
+  border: 2px solid var(--marigold);
+  border-radius: 999px;      /* pill shape */
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: transparent;
+}
+
+.button-outline {
+  background-color: transparent;
+}
+
+.button-outline:hover {
+  background-color: var(--marigold);
+}
+
+/* =========================================================
+   6. SECTIONS (spacing and alignment)
+   ========================================================= */
+.section {
+  padding: 4rem 8%;
+  max-width: 1100px;
+  margin: 0 auto;            /* centers the content */
+}
+
+.section p {
+  max-width: 700px;
+}
+
+/* =========================================================
+   7. EDUCATION TABLE (table styling, alignment, spacing)
+   ========================================================= */
+.table-wrap {
+  overflow-x: auto;          /* table scrolls sideways on small phones */
+}
+
+.edu-table {
+  width: 100%;
+  border-collapse: collapse; /* removes double borders between cells */
+  background-color: var(--white);
+  min-width: 560px;
+}
+
+.edu-table th {
+  background-color: var(--deep-teal);
+  color: var(--white);
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-weight: 500;
+}
+
+.edu-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #D5E0DB;
+  vertical-align: top;
+}
+
+.edu-table td:first-child { /* course name in bold teal */
+  font-weight: 700;
+  color: var(--deep-teal);
+}
+
+.edu-table td:nth-child(3),
+.edu-table td:nth-child(4) {
+  white-space: nowrap;       /* keeps "2026 - 2030" on one line */
+}
+
+.edu-table tbody tr:nth-child(even) { /* zebra stripes for readability */
+  background-color: #F7FAF8;
+}
+
+/* =========================================================
+   8. SKILLS (flexbox with wrapping)
+   ========================================================= */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;           /* moves to the next line when full */
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 0.5rem 1.2rem;
+  background-color: var(--white);
+  border: 1.5px solid var(--deep-teal);
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   9. PROJECT CARDS (CSS Grid)
+   ========================================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 1.75rem;
+  border-top: 5px solid var(--deep-teal);
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   10. CONTACT AND FOOTER
+   ========================================================= */
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--deep-teal);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   11. RESPONSIVE DESIGN (media query for phones)
+   ========================================================= */
+@media (max-width: 700px) {
+  #navbar {
+    flex-direction: column;  /* stack logo above the links */
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    border-left-width: 6px;
+    padding-left: 1rem;
+  }
+}
+
+/* =========================================================
+   12. ABOUT, SCORES, LISTS AND PANELS (added sections)
+   ========================================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;   /* text wider than the facts box */
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.quick-facts {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-left: 5px solid var(--marigold);
+}
+
+.quick-facts p {
+  margin-bottom: 0.6rem;
+}
+
+.quick-facts strong {
+  display: block;                  /* label sits on its own line */
+  color: var(--deep-teal);
+  font-size: 0.85rem;
+}
+
+.pretty-list {
+  list-style: none;
+}
+
+.pretty-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.8rem;
+  max-width: 700px;
+}
+
+.pretty-list li::before {          /* custom marigold diamond bullet */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background-color: var(--marigold);
+  transform: rotate(45deg);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.panel {
+  background-color: var(--white);
+  padding: 1.75rem;
+  border-radius: 6px;
+}
+
+.panel h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  .about-grid, .two-col {
+    grid-template-columns: 1fr;    /* stack into one column on phones */
+  }
+}
+
+/* Email address shown as text in the Contact section */
+.email-line {
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+.email-line a {
+  color: var(--deep-teal);
+  border-bottom: 2px solid var(--marigold);
+}
+
+/* =========================================================
+   13. HERO PHOTO, CAREER GOAL AND PROJECT TOOLS
+   ========================================================= */
+.hero {
+  flex-direction: row;            /* text and photo side by side */
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;                        /* text takes the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-photo img {
+  width: 220px;
+  aspect-ratio: 217 / 251;
+  object-fit: cover;
+  border-radius: 50% 50% 8px 8px; /* arch shape */
+  border: 6px solid var(--marigold);
+  display: block;
+}
+
+.card.featured {               /* website project spans the full row */
+  grid-column: 1 / -1;
+  border-top-color: var(--marigold);
+}
+
+.goal {
+  margin-top: 1rem;
+}
+
+.goal strong {
+  color: var(--deep-teal);
+}
+
+.tools {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #C9D6D0;
+  font-size: 0.9rem;
+  color: var(--soft-gray);
+}
+
+.tools strong {
+  color: var(--deep-teal);
+}
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column-reverse; /* photo on top on phones */
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+  }
+
+  .hero-photo img {
+    width: 150px;
+  }
+}
